@@ -2,6 +2,8 @@ const inquirer=require('inquirer');
 const Intern=require("./lib/Intern");
 const Manager=require("./lib/Manager");
 const Engineer=require("./lib/Engineer");
+const fs=require("fs");
+const generateHTML=require("./lib/generateHTML");
 // Employee needed to be required?
 
 const managerQuestion=[{
@@ -92,6 +94,11 @@ const internQuestion=[{
     name: 'type',
 }];
 
+  // TODO: Create a function to write README file
+function writeToFile(fileName, markdown) {
+    fs.writeFile(fileName, markdown, (err) =>
+    err ? console.error(err) : console.log('Success!')
+    );}
 
 
 
@@ -118,7 +125,16 @@ async function init() {
         }
 
     }
-    console.log(employee);  
+    
+  
+
+    console.log("Generating your HTML...")
+    const html = generateHTML(employee);
+    console.log(html);
+
+  // Write markdown to file
+  await writeToFile('team.html', html);
+  
   }
   
   // Function call to initialize app
