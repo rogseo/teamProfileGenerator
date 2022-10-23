@@ -54,6 +54,7 @@ WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated in 'dist' folder.
 ```
 View the generated folder in browser.
+
 ![sample generated webpage](./images/Your-Team.png)
 
 
@@ -64,7 +65,7 @@ After Install jest, run the following command.
 npm run test
 ```
 
-![test result](./images/runTestScreenShot.png)
+![test result](./images/Screen%20Shot%202022-10-23%20at%206.00.16%20PM.png)
 
 
 ## Demonstration
