@@ -16,7 +16,7 @@ const promptQuestion = (type)=>{
         type: 'input',
         message: `What is your ${type}'s ID`,
         name: 'id',
-        default: 3,
+        default: '3',
       },
       {
         type: 'input',
