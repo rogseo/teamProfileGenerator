@@ -73,17 +73,18 @@ const employee=[]; // array of employee
 async function init() {  
     // Prompt Inquirer questions
     var responses = await inquirer.prompt(promptQuestion('manager'));
-    employee.push(new Manager(responses.name,responses.id,responses.email,responses.officeNum));
+    //responses.name.charAt(0).toUpperCase() + responses.name.slice(1) -> to make first letter uppercase
+    employee.push(new Manager(responses.name.charAt(0).toUpperCase() + responses.name.slice(1),responses.id,responses.email,responses.officeNum));
   
     //Keep asking questions until user choose 'I don't want to add anymore'
     while(responses.type!==`I don't want to add anymore`){
         if(responses.type==='Engineer'){
             responses =await inquirer.prompt(promptQuestion('engineer'));
-            employee.push(new Engineer(responses.name,responses.id,responses.email,responses.github));
+            employee.push(new Engineer(responses.name.charAt(0).toUpperCase() + responses.name.slice(1),responses.id,responses.email,responses.github));
         }
         else{//if Intern
             responses =await inquirer.prompt(promptQuestion('intern'));
-            employee.push(new Intern(responses.name,responses.id,responses.email,responses.school));
+            employee.push(new Intern(responses.name.charAt(0).toUpperCase() + responses.name.slice(1),responses.id,responses.email,responses.school));
         }
 
     }

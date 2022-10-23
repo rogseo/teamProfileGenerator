@@ -16,6 +16,7 @@ A command-line application that takes in information about employees on a certai
 - [Usage](#usage)
 - [Tests](#tests)
 - [Demonstration](#demonstration)
+- [Improvement](#improvement)
 - [Credit](#credit)
 - [Questions](#questions)
 
@@ -57,15 +58,23 @@ View the generated folder in browser.
 
 
 ## Tests
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+
+After Install jest, run the following command.
+```bash
+npm run test
+```
+
+![test result](./images/runTestScreenShot.png)
+
 
 ## Demonstration
 [ViewDemoVideo](https://watch.screencastify.com/v/5KPWM4vYaMBR2lqgYyp6)
 
+## Improvement
+Add github Id validation by using github API.
 
 ## Credit
 Icon : https://iconify.design/
-
 
 ## Questions
 if you have more question, reach me out below.
