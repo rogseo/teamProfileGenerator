@@ -1,32 +1,68 @@
 # teamProfileGenerator
-Command line application to generate team Profile 
+
+A command-line application that takes in information about employees on a certain team, then generates an HTML webpage that displays summaries for each person.
+
+
+
 
 
 ## License
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-** Provide a short description explaining the what, why, and how of your project **
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+
+The application will start by using the following command:
+```bash
+node index.js
+```
+WHEN I start the application
+THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
+WHEN I enter the team manager’s name, employee ID, email address, and office number
+THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
+WHEN I select the engineer option
+THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
+WHEN I select the intern option
+THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
+WHEN I decide to finish building my team
+THEN I exit the application, and the HTML is generated in 'dist' folder.
+
+
+## Technology
+[Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer/v/8.2.4) for collecting input from the user.
+
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [Tests](#tests)
+- [Mock-up](#mock-up)
+- [Credit](#credit)
 - [Questions](#questions)
 
 ## Installation
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Install jest and inquirer by using the following command:
+```bash
+node i
+```
+
+The application will be invoked by using the following command:
+```bash
+node index.js
+```
 
 ## Usage
 Provide instructions and examples for use. Include screenshots as needed.
 
-## Contributing
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
 ## Tests
 Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+
+## Mock-up
+The following image shows a mock-up of the generated HTML’s appearance and functionality:
+
+Click to video link >
+
+## Credit
+Icon : https://iconify.design/
 
 
 ## Questions
