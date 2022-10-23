@@ -91,7 +91,7 @@ async function init() {
     console.log(html);
 
   // Write markdown to file
-    await writeToFile('team.html', html);
+    await writeToFile('./dist/team.html', html);
   
   }
   
