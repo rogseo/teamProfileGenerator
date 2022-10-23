@@ -55,7 +55,7 @@ THEN I exit the application, and the HTML is generated in 'dist' folder.
 ```
 View the generated folder in browser.
 
-![sample generated webpage](./images/Your-Team.png)
+![sample generated webpage](./images/Your-Team%20(1).png)
 
 
 ## Tests
