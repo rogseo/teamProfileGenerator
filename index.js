@@ -5,36 +5,39 @@ const Engineer=require("./lib/Engineer");
 const fs=require("fs");
 const generateHTML=require("./lib/generateHTML");
 
-
-
 const promptQuestion = (type)=>{
     return [{
         type: 'input',
         message: `What is your ${type}'s name?`,
         name: 'name',
+        default: 'Yeon',
       },
       {
         type: 'input',
         message: `What is your ${type}'s ID`,
         name: 'id',
+        default: 3,
       },
       {
         type: 'input',
         message: `What is your ${type}'s email`,
         name: 'email',
+        default:'rogseo@gmail.com'
       },
       {
         type: 'input',
         message: `What is your ${type}'s office number`,
         name: 'officeNum',
+        default:'1234',
         when() {
             return type === 'manager'
         }
       },
       {
         type: 'input',
-        message: `What is your team ${type}'s github`,
+        message: `What is your team ${type}'s github username`,
         name: 'github',
+        default:'rogseo',
         when() {
             return type === 'engineer'
         }
@@ -43,6 +46,7 @@ const promptQuestion = (type)=>{
         type: 'input',
         message: `What is your team ${type}'s school`,
         name: 'school',
+        default:'UT',
         when() {
             return type === 'intern'
         }
@@ -71,12 +75,11 @@ async function init() {
     var responses = await inquirer.prompt(promptQuestion('manager'));
     employee.push(new Manager(responses.name,responses.id,responses.email,responses.officeNum));
   
-
+    //Keep asking questions until user choose 'I don't want to add anymore'
     while(responses.type!==`I don't want to add anymore`){
         if(responses.type==='Engineer'){
             responses =await inquirer.prompt(promptQuestion('engineer'));
             employee.push(new Engineer(responses.name,responses.id,responses.email,responses.github));
-
         }
         else{//if Intern
             responses =await inquirer.prompt(promptQuestion('intern'));
@@ -85,7 +88,6 @@ async function init() {
 
     }
     
-  
     console.log("Generating your HTML...")
     const html = generateHTML(employee);
     console.log(html);
